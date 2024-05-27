@@ -20,13 +20,8 @@ class Program
 
     private static void PrintTheAverageWeightOfCars()
     {
-        int carWeightSum = 0;
-        foreach (Car car in listOfCars)
-        {
-            carWeightSum += car.Weight;
-        }
-        double averageWeight = carWeightSum / (double)listOfCars.Count;
-        Console.WriteLine($"The average weight of cars is {averageWeight}");
+        double averageCarWeight = listOfCars.Select(car => car.Weight).Average();
+        Console.WriteLine($"The average weight of cars is {averageCarWeight}");
     }
 
     private static void Combine2ArraysAndPrintTheNewArray()
